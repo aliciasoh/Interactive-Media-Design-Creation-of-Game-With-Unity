@@ -12,7 +12,7 @@ public class StoryController : MonoBehaviour {
 	private bool crawling = false;
 
 	void Start(){
-		textBox.text = "You are a pair of brothers whose only source of water is River A.\n\nYou feel that the government has neglected you for profits \n\nand allowed big corporations such as ABCD and XXXX to pollute the water source. \n\nYou want to pressure the government \n\ninto disallowing big corporations from polluting your water source.\n\n\n\nPress 'n' to proceed";
+		textBox.text = "You are a villager whose only source of water is River A.\n\nYou feel that the government has neglected you for profits \n\nand allowed big corporations such as ABCD and XXXX to pollute the water source. \n\nYou want to pressure the government \n\ninto disallowing big corporations from polluting your water source.\n\n\n\nPress 'n' to proceed";
 
 	
 	}

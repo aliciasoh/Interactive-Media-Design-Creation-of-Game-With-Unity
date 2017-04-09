@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	public GameObject playerObject;
-
+	private PointSystem ps;
 	//Used to store player food points total during level.
 
 	private GameController gameController;
@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour {
 		GameObject checkCaughtObject = GameObject.FindGameObjectWithTag ("CheckCaught");
 		checkCaught = checkCaughtObject.GetComponent <CheckCaught>();
 
+		GameObject pointsController = GameObject.FindGameObjectWithTag ("ps");
+		ps = pointsController.GetComponent <PointSystem>();
 
 	}
 	
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour {
 		//Use the two store floats to create a new Vector2 variable movement.
 		Vector3 movement = new Vector3 (moveHorizontal, moveVertical);
 
-		if (Input.GetKey (KeyCode.LeftShift)) {
+		if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) {
 			movement = movement.normalized * runSpeed * Time.deltaTime;
 		} else {
 			movement = movement.normalized * speed * Time.deltaTime;
@@ -79,7 +81,10 @@ public class PlayerController : MonoBehaviour {
 
 		rb2d.MovePosition (transform.position + movement);
 
+		if (caught == 20) {
+			SceneManager.LoadScene ("Restart");
 
+		}
 
 
 	}
@@ -131,6 +136,9 @@ public class PlayerController : MonoBehaviour {
 		if (enemyHit.gameObject.CompareTag ("Enemy")) 
 		{
 			caught = caught + 1;
+
+			ps.changePoints ();
+
 			keysCollected = 0;
 			caughtText.text = "No. of Times Caught: " + caught;
 

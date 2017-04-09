@@ -46,12 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CheckCaught.cs" />
-     <Compile Include="Assets\Level3GameController.cs" />
-     <Compile Include="Assets\Level3PlayerController.cs" />
-     <Compile Include="Assets\LoaderGame3.cs" />
-     <Compile Include="Assets\Mission3Story.cs" />
-     <Compile Include="Assets\Mover2.cs" />
+     <Compile Include="Assets\PointSystem.cs" />
+     <Compile Include="Assets\PointSystem2.cs" />
+     <Compile Include="Assets\PointSystem3.cs" />
+     <Compile Include="Assets\RestartPrison.cs" />
      <Compile Include="Assets\Rogue\Completed\Scripts\BoardManager.cs" />
      <Compile Include="Assets\Rogue\Completed\Scripts\Enemy.cs" />
      <Compile Include="Assets\Rogue\Completed\Scripts\GameManager.cs" />
@@ -61,24 +59,33 @@
      <Compile Include="Assets\Rogue\Completed\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Rogue\Completed\Scripts\Wall.cs" />
      <Compile Include="Assets\Rogue\TutorialInfo\Scripts\TutorialInfo.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\CheckCaught.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\CheckCaught2.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\Ending.cs" />
      <Compile Include="Assets\Terrorist\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\Failed.cs" />
      <Compile Include="Assets\Terrorist\Scripts\GameController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\GunStoryController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\Level2GameController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\Level2PlayerController.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\Level3GameController.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\Level3PlayerController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\LoaderGame.cs" />
      <Compile Include="Assets\Terrorist\Scripts\LoaderGame2.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\LoaderGame3.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\Mission3Story.cs" />
      <Compile Include="Assets\Terrorist\Scripts\Mover.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\Mover2.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\Mover3.cs" />
      <Compile Include="Assets\Terrorist\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\SeStoryController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\StoryController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\TextController.cs" />
      <Compile Include="Assets\Terrorist\Scripts\Waypoint.cs" />
+     <Compile Include="Assets\Terrorist\Scripts\explosion.cs" />
      <None Include="Assets\Rogue\TutorialInfo\Fonts\LICENSE.txt" />
      <None Include="Assets\Rogue\Fonts\OFL.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
+     <None Include="Assets\explosionsoundslite\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -93,9 +100,6 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>

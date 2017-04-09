@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Terrorist/Scenes/Terrorist.unity
+- path: Assets/Terrorist/Scenes/Level3.unity
   isLoaded: 1
   isActive: 1

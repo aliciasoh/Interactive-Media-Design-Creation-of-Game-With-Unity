@@ -64,19 +64,27 @@ public class Level2GameController: MonoBehaviour {
 		gunsCollected = 0;
 		shotguns = 0;  
 
-		gunText.text = "Pistols Collected: " + gunsCollected + " | Shotgun Collected: " + shotguns;
+		gunText.text = "TNT Collected: " + gunsCollected + " | Bombs Collected: " + shotguns;
 		//GameObject go = (GameObject)Instantiate (Resources.Load ("Guards"));
 		//GameObject go1 = (GameObject)Instantiate (Resources.Load ("Enemy2 (1)"));
 
-		GameObject guns = GameObject.Find ("Guns");
+		GameObject guns = GameObject.FindGameObjectWithTag ("Respawn");
 		Destroy (guns);
 
 			GameObject go2 = (GameObject)Instantiate (Resources.Load ("Guns"));
 
 
+	}
 
+	public void AddPistol(){
+		gunsCollected++;
+		gunText.text = "TNT Collected: " + gunsCollected + " | Bombs Collected: " + shotguns;
 
+	}
 
+	public void AddShotgun(){
+		shotguns++;
+		gunText.text = "TNT Collected: " + gunsCollected + " | Bombs Collected: " + shotguns;
 
 	}
 }

@@ -47,15 +47,22 @@ public class Mover : MonoBehaviour
 		//Store the current horizontal input in the float moveHorizontal.
 		if (playerScript.caught >= 5) {
 			speed = 1.0f;
-			Debug.Log ("here");
-		} else if (playerScript.caught < 5) {
-			
+		} 
+		else if (playerScript.caught ==3 || playerScript.caught ==4 ) {
+
+			speed = 2.0f;
+		} 
+		else if (playerScript.caught ==2) {
+
+			speed = 3.0f;
+		} 
+		else if (playerScript.caught < 2) {
+
 			speed = 4.0f;
 		} else {
 			speed = 4.0f;
 		}
 
-		Debug.Log (speed);
 
 		float distance = Vector3.Distance(transform.position, player.position);
 		if (distance > walkingDistance) {

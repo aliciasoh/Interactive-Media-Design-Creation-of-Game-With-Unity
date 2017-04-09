@@ -28,16 +28,20 @@ public class Level2PlayerController : MonoBehaviour {
 
 
 	public GameObject playerObject;
+	private PointSystem2 ps;
 
 	//Used to store player food points total during level.
 
 	private Level2GameController level2GameController;
-
+	private CheckCaught2 checkCaught;
+	private bool isColliding;
 	// Use this for initialization
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
-		gunText.text = "Pistols Collected: " + gunsCollected + " | Shotgun Collected: " + shotguns;
+		gunText.text = "TNT Collected: " + gunsCollected + " | Bombs Collected: " + shotguns;
 		caughtText.text = "No. of Times Caught: " + caught;
+
+		Debug.Log ("start");
 
 		InvokeRepeating ("PlayWalk", 0.0f, 0.3f);
 		InvokeRepeating ("PlayRun", 0.0f, 0.3f);
@@ -46,12 +50,19 @@ public class Level2PlayerController : MonoBehaviour {
 		GameObject gameControllerObject = GameObject.FindGameObjectWithTag ("Level2GameController");
 		level2GameController = gameControllerObject.GetComponent <Level2GameController>();
 
+		GameObject checkCaughtObject = GameObject.FindGameObjectWithTag ("CheckCaught2");
+		checkCaught = checkCaughtObject.GetComponent <CheckCaught2>();
 
-
+		GameObject pointsController = GameObject.FindGameObjectWithTag ("ps2");
+		ps = pointsController.GetComponent <PointSystem2>();
 	}
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
+
+		checkCaught.SetCaught (caught);
+
+		isColliding = false;
 		//Store the current horizontal input in the float moveHorizontal.
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 
@@ -61,7 +72,7 @@ public class Level2PlayerController : MonoBehaviour {
 		//Use the two store floats to create a new Vector2 variable movement.
 		Vector3 movement = new Vector3 (moveHorizontal, moveVertical);
 
-		if (Input.GetKey (KeyCode.LeftShift)) {
+		if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) {
 			movement = movement.normalized * runSpeed * Time.deltaTime;
 		} else {
 			movement = movement.normalized * speed * Time.deltaTime;
@@ -77,13 +88,18 @@ public class Level2PlayerController : MonoBehaviour {
 	//OnTriggerEnter2D is called whenever this object overlaps with a trigger collider.
 	void OnTriggerEnter2D(Collider2D other) 
 	{
+		if (isColliding)
+			return;
+		isColliding = true;
 		//Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
-		if (other.gameObject.CompareTag ("Exit")) 
+		if (other.gameObject.CompareTag ("pistol")) 
 		{
 			//... then set the other object we just collided with to inactive.
 			other.gameObject.SetActive(false);
-			gunsCollected = gunsCollected + 1;
-			gunText.text = "Pistols Collected: " + gunsCollected + " | Shotgun Collected: " + shotguns;
+
+			gunsCollected++;
+			level2GameController.AddPistol ();
+
 
 			AudioSource audio = GetComponent<AudioSource> ();
 			audio.clip =  keySound; 
@@ -93,12 +109,14 @@ public class Level2PlayerController : MonoBehaviour {
 		}
 
 		//Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
-		if (other.gameObject.CompareTag ("Soda")) 
+		else if (other.gameObject.CompareTag ("Shotgun")) 
 		{
 			//... then set the other object we just collided with to inactive.
 			other.gameObject.SetActive(false);
-			shotguns = shotguns + 1;
-			gunText.text = "Pistols Collected: " + gunsCollected + " | Shotgun Collected: " + shotguns;
+			//level2GameController.AddShotgun ();
+
+			shotguns = 1;
+			level2GameController.AddShotgun ();
 
 			AudioSource audio = GetComponent<AudioSource> ();
 			audio.clip =  keySound; 
@@ -110,15 +128,15 @@ public class Level2PlayerController : MonoBehaviour {
 		}
 
 		//Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
-		if (other.gameObject.CompareTag ("Finish")) 
+		else if(other.gameObject.CompareTag ("Finish")) 
 		{
 			if (gunsCollected == 8 || shotguns==1) {
 
 				SceneManager.LoadScene ("Mission3Story");
 
 			} 
-			else if (gunsCollected < 8) {
-				gunText.text = "Collect either 1 shotgun or 8 pistols!";
+			else if (gunsCollected < 8 || shotguns!=1) {
+				gunText.text = "Collect either 1 bomb or 8 TNTs!";
 				Invoke("ChangeText", 2f);
 
 			} 
@@ -130,7 +148,7 @@ public class Level2PlayerController : MonoBehaviour {
 	void ChangeText()
 	{
 		//Disable the levelImage gameObject.
-		gunText.text = "Pistols Collected: " + gunsCollected + " | Shotgun Collected: " + shotguns;
+		gunText.text = "TNT Collected: " + gunsCollected + " | Bombs Collected: " + shotguns;
 
 	}
 
@@ -140,8 +158,8 @@ public class Level2PlayerController : MonoBehaviour {
 		if (enemyHit.gameObject.CompareTag ("Enemy")) 
 		{
 			caught = caught + 1;
-			gunsCollected = 0;
-			shotguns = 0;  
+
+			ps.changePoints ();
 
 			caughtText.text = "No. of Times Caught: " + caught;
 
@@ -154,6 +172,12 @@ public class Level2PlayerController : MonoBehaviour {
 
 			speed = 4.0f;
 			runSpeed = 8.0f;
+
+			if (caught == 20) {
+				SceneManager.LoadScene ("Restart");
+
+			}
+
 			level2GameController.GameOver();
 
 
