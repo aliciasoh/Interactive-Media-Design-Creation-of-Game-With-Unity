@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Escape))
 			{
-			Application.Quit ();
+			SceneManager.LoadScene ("Starting");
 
 
 			}

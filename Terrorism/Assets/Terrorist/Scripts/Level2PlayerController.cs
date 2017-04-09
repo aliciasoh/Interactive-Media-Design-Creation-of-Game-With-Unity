@@ -158,7 +158,8 @@ public class Level2PlayerController : MonoBehaviour {
 		if (enemyHit.gameObject.CompareTag ("Enemy")) 
 		{
 			caught = caught + 1;
-
+			gunsCollected = 0;  
+			shotguns = 0;  
 			ps.changePoints ();
 
 			caughtText.text = "No. of Times Caught: " + caught;

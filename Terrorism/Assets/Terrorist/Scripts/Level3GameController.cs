@@ -38,7 +38,7 @@ public class Level3GameController: MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Escape))
 		{
-			Application.Quit ();
+			SceneManager.LoadScene ("Starting");
 
 
 		}

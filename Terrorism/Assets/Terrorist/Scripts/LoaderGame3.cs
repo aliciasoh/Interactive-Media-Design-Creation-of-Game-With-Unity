@@ -10,6 +10,7 @@ namespace Completed
 		private GameObject controlImage;
 		private GameObject overall;
 		private GameObject levelImage1;							//Image to block out level as levels are being set up, background for levelText.
+		private GameObject controls;
 
 
 		void Awake ()
@@ -17,7 +18,10 @@ namespace Completed
 			//Get a reference to our image LevelImage by finding it by name.
 			levelImage = GameObject.Find("LevelText");
 			levelImage1 = GameObject.Find("LevelText (1)");
+			controls = GameObject.Find("Image");
+
 			levelImage1.SetActive(false);
+			controls.SetActive(false);
 
 			overall = GameObject.Find("LevelImage (2)");
 
@@ -49,6 +53,8 @@ namespace Completed
 			//Disable the levelImage gameObject.
 			levelImage1.SetActive(false);
 			controlImage.SetActive(true);
+			controls.SetActive(true);
+
 			Invoke("HideControlText", 5f);
 		}
 
@@ -56,6 +62,8 @@ namespace Completed
 		{
 			//Disable the levelImage gameObject.
 			controlImage.SetActive(false);
+			controls.SetActive(false);
+
 			overall.SetActive(false);
 
 		}

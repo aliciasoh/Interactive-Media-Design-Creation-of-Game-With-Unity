@@ -25,7 +25,7 @@ public class StoryController : MonoBehaviour {
 		}
 
 
-		if (gameObject.transform.position.y > 300.0f)
+		if (gameObject.transform.position.y > 200.0f)
 		{
 			crawling = true;
 		}

@@ -37,10 +37,12 @@ public class Level2GameController: MonoBehaviour {
 	void FixedUpdate () {
 		if (Input.GetKeyDown (KeyCode.Escape))
 		{
-			Application.Quit ();
+			SceneManager.LoadScene ("Starting");
 
 
 		}
+		GameObject checkCaughtObject = GameObject.Find ("CheckCaught");
+		checkCaught = checkCaughtObject.GetComponent <CheckCaught>();
 
 		if (checkCaught.checkingCaught == 3 ||  checkCaught.checkingCaught == 4) {
 			GameObject enemy3 = GameObject.Find ("Enemy2 (4)");

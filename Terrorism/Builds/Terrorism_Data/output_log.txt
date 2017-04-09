@@ -1,0 +1,84 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   Intel
+    VRAM:     2111 MB
+    Driver:   21.20.16.4574
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Owner\Dropbox\Y4S2\NM3209\NM3209Terrorism\Terrorism\Builds\Terrorism_Data\Managed\System.dll (this message is harmless)
+desktop: 3200x1800 60Hz; virtual: 3200x1800 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.196544 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.374718 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at Completed.GameManager.OnSceneLoaded (Scene arg0, LoadSceneMode arg1) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
+  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 538.
+Total: 0.357135 ms (FindLiveObjects: 0.051358 ms CreateObjectMapping: 0.027259 ms MarkObjects: 0.271012 ms  DeleteObjects: 0.006320 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.926815 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at Completed.GameManager.OnSceneLoaded (Scene arg0, LoadSceneMode arg1) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
+  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 549.
+Total: 0.720197 ms (FindLiveObjects: 0.069530 ms CreateObjectMapping: 0.052148 ms MarkObjects: 0.423901 ms  DeleteObjects: 0.173432 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.578370 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at Completed.GameManager.OnSceneLoaded (Scene arg0, LoadSceneMode arg1) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
+  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 522.
+Total: 0.617481 ms (FindLiveObjects: 0.049382 ms CreateObjectMapping: 0.033580 ms MarkObjects: 0.295506 ms  DeleteObjects: 0.237827 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.742026 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at Completed.GameManager.OnSceneLoaded (Scene arg0, LoadSceneMode arg1) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
+  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 533.
+Total: 1.121185 ms (FindLiveObjects: 0.102321 ms CreateObjectMapping: 0.091259 ms MarkObjects: 0.611950 ms  DeleteObjects: 0.314469 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 4684 -> priority: 1 

@@ -25,7 +25,7 @@ public class TextController : MonoBehaviour {
 		}
 
 
-		if (gameObject.transform.position.y > 300.0f)
+		if (gameObject.transform.position.y > 250.0f)
 		{
 			crawling = true;
 		}

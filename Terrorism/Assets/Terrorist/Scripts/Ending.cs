@@ -43,7 +43,7 @@ public class Ending : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.N))
 		{
 
-			SceneManager.LoadScene ("Story");
+			SceneManager.LoadScene ("Starting");
 
 
 		}

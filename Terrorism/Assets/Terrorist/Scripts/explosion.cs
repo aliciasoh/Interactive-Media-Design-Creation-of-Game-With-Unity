@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class explosion : MonoBehaviour {
 
-	public AudioClip explodeSound;	
+	public AudioClip scream;	
+
 	private bool gotHit;
 	// Reference to the audio source which will play our shooting sound effect
 
@@ -31,9 +32,9 @@ public class explosion : MonoBehaviour {
 
 
 
-		AudioSource audio = GetComponent<AudioSource> ();
-		audio.clip =  explodeSound; 
-		audio.Play ();
+		AudioSource audio1 = GetComponent<AudioSource> ();
+		audio1.clip =  scream; 
+		audio1.Play ();
 
 		if (gotHit == false) {
 			SceneManager.LoadScene ("Failed");

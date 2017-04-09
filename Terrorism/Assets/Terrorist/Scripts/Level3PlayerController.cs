@@ -25,7 +25,7 @@ public class Level3PlayerController : MonoBehaviour {
 
 
 	public int caught = 0;   
-	public float time;
+	public float time= 300;
 	private float convert;
 
 	public GameObject playerObject;
@@ -42,6 +42,7 @@ public class Level3PlayerController : MonoBehaviour {
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		caughtText.text = "No. of Times Caught: " + caught;
+		time= 300;
 		convert = time / 60;
 		TimeSpan t = TimeSpan.FromMinutes (convert);
 		timerConvert = String.Format ("{0}:{1:D2}", t.Minutes, t.Seconds);
@@ -165,7 +166,7 @@ public class Level3PlayerController : MonoBehaviour {
 			planted = false;
 			GameObject bomb = GameObject.Find ("bomb");
 			bomb.transform.position = new Vector3(-50.0f, 0.0f, -1.0f);
-
+			time= 300;
 			caught = caught + 1;
 			ps.changePoints ();
 
